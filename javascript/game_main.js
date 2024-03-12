@@ -213,6 +213,7 @@ if (number == 1) {
  rivalevoimg = loadNeededPokemon(pokerivalnumber+2);
 }
 if (starterpokemon != "") {
+    document.getElementById('clockdiv').style.display = "block";
     document.getElementById('afterbeforegame').style.display = "none";
     document.getElementById('game').style.display = "block";
     document.getElementById('surface').style.height = "600px";
@@ -732,6 +733,10 @@ function attack(){
         stoppuhr.stop();
         timer = hrs + ":" + mins + ":" + secs + ":" + msecs;
         localStorage['time'] = JSON.stringify(timer);
+        let finalscore = [sessionStorage['name'], timer];
+        let score = JSON.parse(localStorage["finalscore"] ?? "[]");
+        score.push(finalscore);
+        localStorage["finalscore"] = JSON.stringify(score)  
     } else if (rivalattackwon == randomsrival.length-1 || rivalattackwon == randoms.length-1){
         final.pause();
         final.loop = false;
@@ -744,6 +749,13 @@ function attack(){
         document.getElementById('winner').style.textAlign = "center";
         end.play();
         end.loop = true;
+        stoppuhr.stop();
+        timer = hrs + ":" + mins + ":" + secs + ":" + msecs;
+        localStorage['time'] = JSON.stringify(timer);
+        let finalscore = [sessionStorage['name'], timer];
+        let score = JSON.parse(localStorage["finalscore"] ?? "[]");
+        score.push(finalscore);
+        localStorage["finalscore"] = JSON.stringify(score)  
     }
 }
 function defend(){
@@ -755,6 +767,7 @@ function defend(){
         document.getElementById('result').innerHTML = "Blocked!";
     }
 }
+let hiddenattack = 1;
 function items(){
     resumeBox.style.display = 'flex';
     resumeBox.innerHTML = 
@@ -782,11 +795,22 @@ function items(){
 function goBack(){
     resumeBox.style.display = 'none';
 }
+function run(){
+    
+    document.getElementById('result').innerHTML = "You can´t run from trainer battles";
+}
 function itemOne(){
-    resumeBox.style.display = 'none';
+    if (hiddenattack == 1){
+        resumeBox.style.display = 'none';
     document.getElementById('result').innerHTML = "You used Hidden Attack!";
     document.getElementById('rivalpokemonbattle').src = randomsrival[randomsrival.length - attackwon -1];
     attackwon++;
+    hiddenattack--;
+    } else{
+        resumeBox.style.display = 'none';
+        document.getElementById('result').innerHTML = "You can't use it anymore!";
+    }
+    
 }
 function itemTwo(){
     resumeBox.style.display = 'none';

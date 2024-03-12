@@ -7,10 +7,21 @@
     <link rel="stylesheet" href="../css/spritegame.css">
     <script src="../javascript/game_leaderboard.js" defer></script>
 </head>
-<body>
-    <h1 style="text-align: center; cursor: pointer;" onclick="back()">Leaderboards</h1>
-    <div id="singleleaderboard">
-        <div>Rank</div><div>Username</div><div>Time</div></div>
-        <div id="singlecontent"></div>
+<body id="leaderboardbody" onload="getScores()">
+    <h1 id="leaderboardtext" style="color: white;">Leaderboard</h1>
+    <div id="wrapper">
+    <div id="comtable">
+       <div id="tablediv"><h2 id="tabletop">Top 5 Players</h2></div>
+            <div id="table">
+                <div id="names"></div>
+                <div id="scores"></div>
+            </div>
+    </div>
+        <div id="inputMain">
+            <input id="leaderboardbutton" type="submit" value="Go to Start" onclick="back()">
+        </div>
+    </div>
+    
+
 </body>
 </html>

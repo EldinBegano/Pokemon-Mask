@@ -45,6 +45,32 @@ html, body {
   border-radius: 5px;
   background-color: #eee;
 }
+#yourname{
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+#user{
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#maybenull{
+  margin-left: 2%;
+}
+#maybenull, #maybeone, #maybetwo, #maybethree, #maybefour{
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 2%;
+}
 #game{
   display: none;
 }
@@ -346,13 +372,14 @@ button:hover {
 .clock {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 45%;
   margin: 10px;
   color: green;
   font-size: 30px;
   font-weight: bolder;
   background-color: black;
   padding: 10px;
+  border-radius: 20px;
 }
 #clock{
   display: none;
@@ -496,19 +523,38 @@ button:hover {
 
 #resumeButton {
   margin-top: 20%;
+  color: rgb(55, 228, 24);
 }
-
-#resumeButton:hover,
+#resumeButton:hover {
+  transform: scale(1.1);
+  border-color: rgb(55, 228, 24);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+#escapeButton{
+  color: red;
+}
+#escapeButton:hover{
+  transform: scale(1.1);
+  border-color: red;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+#quitButton{
+  color: #ff0000;
+}
+#quitButton:hover {
+  transform: scale(1.1);
+  border-color: #ff0000;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
 #leaderboardButton:hover,
 #achievementButton:hover,
 #optionButton:hover,
-#escapeButton:hover,
 #gameStartButton:hover,
 #creditsButton:hover,
-#quitButton:hover,
 #continue:hover,
 #leaderboard:hover,
-#quit:hover {
+#quit:hover,
+#leaderboardbutton:hover {
   transform: scale(1.1);
   border-color: #00ffff;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
@@ -685,6 +731,7 @@ button:hover {
   text-transform: uppercase;
   color: #fff;
   animation: 10s credits linear;
+  border-radius: 20px;
 }
 
 .credits {
@@ -717,6 +764,12 @@ body{
   width: 50px;
   height: 50px;
 }
+#dice2{
+  margin-right: 1%;
+}
+#dice{
+  margin-left: 1%;
+}
 .dicerow{
   display: flex;
   flex-direction: row;
@@ -727,12 +780,20 @@ body{
 #winner{
   margin: 0 auto;
 }
+#clockdiv{
+  display: none;
+}
 .battle-btn{
   background-color: black;
   color: white;
   width: 20%;
+  padding: 0.5%;
   border: 2px solid white;
   border-radius: 10px;
+  margin-right: 3%;
+}
+#attack{
+  margin-left: 3%;
 }
 .battle-btn:hover{
   border-color: #ff0000;
@@ -787,4 +848,84 @@ font-size: x-large;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+#names{
+  color: black;
+  text-align: left;
+  font-size: 20px;
+  width: 50%;
+  letter-spacing: 5px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+}
+#scores{
+  color: black;
+  text-align: right;
+  width: 50%;
+  font-size: 20px;
+  letter-spacing: 5px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+}
+#table{
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-left: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  padding: 5%;
+  margin: 5% 20% 5%;
+  backdrop-filter: blur(10px);
+}
+#wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+#inputMain{
+  margin-top: -4%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+#leaderboardbutton{
+  width: 25%;
+  padding: 1%;
+  margin: 5%;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.5s;
+  font-size: 20px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+#leaderboardtext{
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 10px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+}
+#leaderboardbody{
+  background-color: honeydew;
+}
+#comtable{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+}
+#tabletop{
+  font-size: xx-large;
+  text-align: center;
+}
+#tablediv{
+  border-bottom: 3px solid white;
 }
