@@ -881,7 +881,8 @@ font-size: x-large;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  width: 90%;
+  margin-left: 5%;
 }
 #inputMain{
   margin-top: -4%;
@@ -928,4 +929,60 @@ font-size: x-large;
 }
 #tablediv{
   border-bottom: 3px solid white;
+}
+#fallimg{
+  width: 100px;
+  height: 100px;
+  top: -15%;
+  right: 1%;
+  position: absolute;
+  animation: fall 5s linear;
+}
+@keyframes fall {
+  0% {
+    top: -15%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+#gifrow{
+  display: flex;
+  flex-direction: row;
+}
+#fallimgman{
+  width: 100px;
+  height: 100px;
+  right: 30%;
+  position: absolute;
+  animation: up 8s linear;
+  scale: -1;
+}
+@keyframes up {
+  0% {
+    top: 160%;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    top: -20%;
+    opacity: 0;
+  }
+}
+#pikachu{
+  width: 70px;
+  height: 50px;
+  left: -10%;
+  top: 90%;
+  position: absolute;
+  animation: pikachu 5s linear;
+}
+@keyframes pikachu {
+  0% {
+    left: -10%;
+  }
+  100% {
+    left: 100%;
+  }
 }

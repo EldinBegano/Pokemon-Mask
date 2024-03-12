@@ -567,28 +567,7 @@ function idset(id, string) {
     })
  }
 
- function openCredits(){
-    document.getElementById('t').style.opacity = 0;
-    document.getElementById('menucontent').innerHTML = "";
-        document.getElementById('btns').style.display = "none"
-        document.getElementById('menucontent').style.display = "block";
-        document.getElementById('menucontent').innerHTML = `
-    <div class='animate'>
-<div class='credits'>Credits</div>
-    <p>Music: Kshinder</p>
-    <p>Sound: SoundImage</p>
-    <p>Idea: Eldin</p>
-    <p>Programming: Eldin</p>
-    <p>Graphics: Eldin</p>
-    <p>Story: Game Freak</p>
-    <p>Design: Eldin</p>
-</div>`;
-setTimeout(function(){
-    document.getElementById('t').style.opacity = 1;
-    watchedCredits = true;
-    backToStart();
-}, 10000);
-}
+
 function quitAll(){
     window.close();
 }

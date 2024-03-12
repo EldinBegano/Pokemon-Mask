@@ -21,6 +21,10 @@ function openCredits(){
     <p>Story: Game Freak</p>
     <p>Design: Eldin</p>
 </div>`;
+document.getElementById('updown').innerHTML = `<img src="../gif/updown.gif" id="fallimgman" alt="">`;
+setTimeout(() => {
+    document.getElementById('fallimgman').style.display = "none";
+}, 8000);
 setTimeout(function(){
     document.getElementById('t').style.opacity = 1;
     watchedCredits = true;
