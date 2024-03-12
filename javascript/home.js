@@ -6,6 +6,7 @@ let watchedCredits = ltwo;
 let eggachievemnt = lone;
 let starwars = lthree;
 function openCredits(){
+    document.getElementById('walker').style.display = "none";
     document.getElementById('t').style.opacity = 0;
     document.getElementById('menucontent').innerHTML = "";
         document.getElementById('btns').style.display = "none"
