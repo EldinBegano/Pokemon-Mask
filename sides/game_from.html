@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/spritegame.css">
+    <script src="../javascript/game_from.js" defer></script>
+</head>
+<body>
+    <div id="gameStart">
+        <div id="videostart">
+            <video autoplay muted id="video">
+                <source src="../video/s.mp4" type="video/mp4">
+                </video>
+        </div>
+        <div id="startscreen">
+            <div class="row"><div class="col"><h1><img src="../img/International_Pokémon_logo.svg.png" id="title" height="250px" width="700px" alt=""></h1>
+                <h3><img src="../img/version.png" id="version" width="300px"></h3>
+                <div id="buttonstart"  onkeydown="starterEvent"  class="text-animation"><h2 id="flick">PRESS ENTER</h2>
+                </div>
+            </div>
+        <img src="../img/hauptbilg.png" width="150px" height="150px" id="smettbo" alt="">
+    </div>
+            
+        </div>
+    </div>
+    <div id="beforegame">
+            <div id="intro-container">
+                <img id="professor-img" src="../img/oak-full.png" alt="Professor Oak">
+                <div id="dialog-box">
+                </div>
+                <button id="continue-btn" onclick="continueDialog()">Continue</button><br>
+                <button onclick="skip()">Skip</button>
+            </div>
+    </div>
+</body>
+</html>

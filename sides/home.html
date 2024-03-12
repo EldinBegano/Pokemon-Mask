@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/spritegame.css">
+    <script src="../javascript/home.js" defer></script>
+</head>
+<body>
+    <div id="opener">
+        <div id="charizard">
+            <img id="flyingItem" src="../gif/chari.gif" alt="glurak">
+        </div>
+
+       <div class="eggrow">
+        <h1 class="openingTitle" id="t">Pokemon <span onmouseover="revealTheChosenOne()">Mask</span></h1>
+        <div id="egg"><img src="../gif/easteregg.gif" id="easteregg" width="20px" height="20px" alt="turtok" onclick="openEgg()"></div>
+    </div> 
+
+        <div class="btns" id="btns">
+            <button class="start-btns" id="gameStartButton" onclick="startVideo()"> Start </button>
+            <button class="start-btns" id="leaderboardButton" onclick="openLeaderBoards()"> Leaderboards</button>
+            <button class="start-btns" id="achievementButton" onclick="openOptions()"> Options</button>
+            <button class="start-btns" id="achievementButton" onclick="openAchievements()"> Achievements</button>
+            <button class="start-btns" id="creditsButton" onclick="openCredits()"> Credits </button>
+            <button class="start-btns" id="quitButton" onclick="quitAll()"> Quit </button>
+          </div>
+          <div id="menucontent"></div>
+          <div id="walker">
+            <img id="goingitem" src="../gif/giphy.gif" alt="rot">
+        </div>
+
+          <div id="thechosenone"><img onclick="sendThemToStarWars()" src="" id="anakin" alt=""></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/spritegame.css">
+    <script src="../javascript/game_main.js" defer></script>
+</head>
+<body id="backgroundi">
+    <div id="afterbeforegame">
+		<h1 id="centertext">Choose Your Pokemon Starter</h1>
+		<div class="starters">
+            <div class="starter-container">
+                <img src="../img/arrow.png" class="arrow" alt="">
+                <div class="pokeball">
+                    <div class="top-part"></div>
+                    <div class="bottom-part"></div>
+                    <div class="middle-part"></div>
+                    <div class="middle-circle"></div>
+                    <button class="pokeball-button">
+                        <img src="../img/Bulbasaur.png" alt="bulbasaur" onclick="setStarter(1)" class="starter-image">
+                    </button>
+                </div>
+                <h2 class="pokemon-name">BULBASAUR</h2>
+            </div>
+            <div class="starter-container">
+                <img src="../img/arrow.png" class="arrow" alt="">
+                <div class="pokeball">
+                    <div class="top-part"></div>
+                    <div class="bottom-part"></div>
+                    <div class="middle-part"></div>
+                    <div class="middle-circle"></div>
+                    <button class="pokeball-button">
+                        <img src="../img/Torchic.png" alt="torchic" onclick="setStarter(2)" class="starter-image">
+                    </button>
+                </div>
+                <h2 class="pokemon-name">TORCHIC</h2>
+            </div>
+            <div class="starter-container">
+                <img src="../img/arrow.png" class="arrow" alt="">
+                <div class="pokeball">
+                    <div class="top-part"></div>
+                    <div class="bottom-part"></div>
+                    <div class="middle-part"></div>
+                    <div class="middle-circle"></div>
+                    <button class="pokeball-button">
+                        <img src="../img/Froakie.png" alt="froakie" onclick="setStarter(3)" class="starter-image">
+                    </button>
+                </div>
+                <h2 class="pokemon-name">FROAKIE</h2>
+            </div>
+        </div>
+	</div>
+    <div class="clock">
+        <div id="clock"><span id="tage">0</span>:<span id="stunden">0</span>:<span id="minuten">0</span>:<span id="sekunden">0</span>:<span id="msekunden">0</span>
+</div>
+    </div>
+    <div id="resumeBox">
+        <div id="escape-Box">
+        <button class="escape-btns" id="resumeButton"> Resume </button>
+        <p></p>
+        <button class="escape-btns" id="leaderboardButton" onclick="openLeaderBoards()"> Leaderboards</button>
+        <p id="warning"></p>
+        <button class="escape-btns" id="optionButton" onclick="openOptions()"> Options</button>
+        <p></p>
+        <button class="escape-btns" id="escapeButton" onclick="quitTheGame()"> Quit </button>
+    </div>
+        <div id="menucontent2"></div>
+    </div>
+	<div id="game">
+	<div id="content">
+	<div class="pokeballs">
+		<div class="image-container">
+            <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+            <img class="overlay-image" src="../img/placeholder.png" id="1" alt="Overlay Image">
+        </div>
+		<div class="image-container">
+            <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+            <img class="overlay-image" src="../img/placeholder.png" id="2" alt="Overlay Image">
+        </div>
+        <div class="image-container">
+            <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+            <img class="overlay-image" src="../img/placeholder.png" id="3" alt="Overlay Image">
+        </div>
+        <div class="image-container">
+            <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+            <img class="overlay-image" src="../img/placeholder.png" id="4" alt="Overlay Image">
+        </div>
+        <div class="image-container">
+            <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+            <img class="overlay-image" src="../img/placeholder.png" id="5" alt="Overlay Image">
+        </div>
+        <div class="image-container">
+            <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+            <img class="overlay-image" src="../img/placeholder.png" id="6" alt="Overlay Image">
+        </div>
+	</div>
+    <div id="surface">
+    	<div id="player">
+    		<img id="spriteImg" src = "../img/sprites2.png" alt="sprite"/>
+    	</div>
+        <div id="collectible"></div>
+    </div>
+	</div>
+    </div>
+    <div id="aftergame">
+        <div class="pokeballs">
+              <div class="image-container">
+                  <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+                  <img class="overlay-image" src="../img/placeholder.png" id="13" alt="Overlay Image">
+              </div>
+              <div class="image-container">
+                  <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+                  <img class="overlay-image" src="../img/placeholder.png" id="14" alt="Overlay Image">
+              </div>
+              <div class="image-container">
+                  <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+                  <img class="overlay-image" src="../img/placeholder.png" id="15" alt="Overlay Image">
+              </div>
+              <div class="image-container">
+                  <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+                  <img class="overlay-image" src="../img/placeholder.png" id="16" alt="Overlay Image">
+              </div>
+              <div class="image-container">
+                  <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+                  <img class="overlay-image" src="../img/placeholder.png" id="17" alt="Overlay Image">
+              </div>
+              <div class="image-container">
+                  <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+                  <img class="overlay-image" src="../img/placeholder.png" id="18" alt="Overlay Image">
+              </div>
+    </div><div class="dicerow">
+        <div id="dice"></div>
+        <div id="battle">
+            
+
+            <div id="enemypokemon">
+            <img src="" alt="" id="rivalpokemonbattle"></div>
+            <div id="mypokemon">
+            <img src="" alt="" id="mypokemonbattle"></div>
+<div id="result"></div>
+            <div id="battlebuttons">
+                <button id="attack" class="battle-btn" onclick="attack()">Attack</button>
+                <button id="defend" class="battle-btn" onclick="defend()">Defend</button>
+                <button id="heal" class="battle-btn" onclick="items()">Item-Box</button>
+            </div>
+            
+        </div>
+        <div id="dice2"></div>
+    </div>
+        <div class="pokeballs" id="down">
+              <div class="image-container">
+              <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+              <img class="overlay-image" src="../img/placeholder.png" id="7" alt="Overlay Image">
+              </div>
+              <div class="image-container">
+              <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+              <img class="overlay-image" src="../img/placeholder.png" id="8" alt="Overlay Image">
+              </div>
+              <div class="image-container">
+              <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+              <img class="overlay-image" src="../img/placeholder.png" id="9" alt="Overlay Image">
+              </div>
+              <div class="image-container">
+              <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+              <img class="overlay-image" src="../img/placeholder.png" id="10" alt="Overlay Image">
+              </div>
+              <div class="image-container">
+              <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+              <img class="overlay-image" src="../img/placeholder.png" id="11" alt="Overlay Image">
+              </div>
+              <div class="image-container">
+              <img class="oneosix" src="../img/Pokeball-PNG-Images.png" alt="">
+              <img class="overlay-image" src="../img/placeholder.png" id="12" alt="Overlay Image">
+              </div>
+          </div>
+    </div>
+    <div id="winnerbox">
+        <h1 id="winner">You Win!</h1>
+        <div class="btns">
+        <button id="continue" class="start-btns" onclick="quitTheGame()">Back to Start</button>
+        <button id="leaderboard" class="start-btns" onclick="openLeaderBoards2()">Leaderboards</button>
+    </div>
+    </div>
+</body>
+</html>

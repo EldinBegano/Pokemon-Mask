@@ -1,0 +1,790 @@
+/* General styling */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #fff;
+  background: #000;
+  background: radial-gradient(circle, #555 0%, #000 100%);
+}
+@font-face {
+  font-family: pokemon;
+  src: url(../font/Pokemon.ttf);
+}
+*{
+  font-family: pokemon;
+}
+@font-face {
+  font-family: solidpokemon;
+  src: url(../font/PokemonSolid.ttf);
+}
+#startscreen{
+  font-family: solidpokemon;
+}
+#intro-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 9%;
+}
+#professor-img {
+  width: 200px;
+  border-radius: 50%;
+  min-height: 200px;
+}
+
+#dialog-box {
+  margin-top: 20px;
+  color: black;
+  padding: 10px;
+  min-height: 50px;
+  font-size: x-large;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #eee;
+}
+#game{
+  display: none;
+}
+#continue-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+/* dashboard outputs */
+#dashboard {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+#startButton {
+  color: #fff;
+  background-color: #222;
+  border: 3px solid rgb(68, 221, 183);
+  padding: 0.5em;
+  text-align: center;
+  margin-left: 34%;
+  width: 30%;
+}
+#startButton:hover {
+  cursor: pointer;
+  background-color: #111;
+}
+#debug_output {
+  color: #fff;
+  background-color: #222;
+  border: 3px solid rgb(68, 221, 183);
+  padding: 0.5em;
+}
+.oneosix{
+  margin-left: 11%;
+  width: 60px;
+  height: 60px;
+}
+
+/* Sprite game surface */
+#surface {
+  background-image: url(../img/background2.jpg);
+  background-image: url(../img/background2.jpg);
+  background-size: cover;
+  border: 3px solid rgb(68, 221, 183);
+  position: relative;
+  margin: 0 auto;
+  transform-origin: top;
+  display: block;
+}
+#battle {
+  background-image: url(../img/battle.png);
+  background-size: cover;
+  border: 3px solid rgb(68, 221, 183);
+  position: relative;
+  margin: 0 auto;
+  transform-origin: top;
+  display: none;
+}
+#aftergame{
+  display: none;
+}
+#player {
+  position: absolute;
+  width: 37px; /* viewing window */
+  height: 40px; /* viewing window */
+  overflow: hidden;
+  opacity: 0; /* hide till start */
+}
+#spriteImg {
+  height: 300px;
+  bottom: 40px; /* which row of sprite */
+  position: relative;
+}
+.starter-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+#centertext{
+  text-align: center;
+}
+.starter {
+  border: 2px solid #333;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.starter:hover {
+  transform: scale(1.1);
+}
+
+#selected-starter {
+  margin-top: 20px;
+}
+.starterimg {
+  width: 100px;
+  height: 100px;
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay-image {
+  position: absolute;
+  top: 0;
+  left: 12%;
+  width: 60px;
+  height: 60px;
+}
+.pokeballs {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+body {
+  background-color: rgb(68, 68, 68);
+}
+button {
+  color: inherit;
+  cursor: pointer;
+}
+button:hover {
+  transform: scale(1.1);
+}
+
+.starters {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 3%;
+}
+.starter-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.arrow {
+  display: block;
+  width: 4rem;
+  visibility: hidden;
+  margin: 0 auto;
+  animation: float 2s ease-in-out infinite;
+}
+.starter-container:hover .arrow {
+  visibility: visible;
+}
+.pokeball {
+  cursor: pointer;
+  position: relative;;
+  width: 15rem;
+  height: 15rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5% auto;
+  border: 0.5rem solid rgb(88, 88, 90);
+  border-radius: 50%;
+  transform-origin: 50% 100%;
+}
+.pokeball:hover {
+  animation: pokeball-shake 0.5s ease-in-out forwards;
+}
+.top-part {
+  flex: 1;
+  background: rgb(238, 64, 53) linear-gradient(150deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.2) 100%);
+}
+.bottom-part {
+  flex: 1;
+  background: rgb(236, 236, 236) linear-gradient(150deg, rgba(255,255,255,0.2) 0%, rgba(0, 0, 0, 0.2) 80%, rgba(0,0,0,0.2) 100%);
+}
+.middle-part {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5%;
+  margin: auto;
+  background-color: rgb(88, 88, 90);
+}
+.middle-circle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 35%;
+  height: 35%;
+  margin: auto;
+  background-color: rgb(88, 88, 90);
+  border-radius: 50%;
+}
+.pokeball-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 25%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background: rgb(236, 236, 236) linear-gradient(150deg, rgba(255,255,255,0.2) 0%, rgba(0, 0, 0, 0.2) 80%, rgba(0,0,0,0.2) 100%);
+  border-radius: 50%;
+  transition-property: width height;
+  transition: 0.3s ease-in;
+}
+.starter-container.active .pokeball-button {
+  width: 100%;
+  height: 100%;
+}
+.starter-image {
+  width: 0%;
+  height: 0%;
+  --final-size: 50%;
+}
+.starter-container.active .starter-image {
+  animation: pokemon-reveal 0.3s 0.3s ease-in forwards;
+}
+.pokemon-name {
+  opacity: 0;
+  text-align: center;
+}
+.starter-container.active .pokemon-name {
+  animation: name-reveal 0.6s 0.3s ease-in forwards;
+}
+@keyframes pokemon-reveal {
+  0% {
+      width: 0%;
+      height: 0%;
+  }
+  100% {
+      width: var(--final-size);
+      height: var(--final-size);
+  }
+}
+@keyframes name-reveal {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@keyframes float {
+  0% {
+      transform: translateY(10%);
+  }
+  50% {
+      transform: translateY(-10%);
+  }
+  100% {
+      transform: translateY(10%);
+  }
+}
+@keyframes pokeball-shake {
+  0% {
+      transform: rotate(0deg);
+  }
+  33% {
+      transform: rotate(20deg);
+  }
+  66% {
+      transform: rotate(-20deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}
+#afterbeforegame{
+  display: none;
+}
+.collectible{
+  width: 60px;
+  height: 60px;
+}
+#collectible{
+ width: 60px;
+}
+#beforegame{
+  display: none;
+}
+.clock {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  color: green;
+  font-size: 30px;
+  font-weight: bolder;
+  background-color: black;
+  padding: 10px;
+}
+#clock{
+  display: none;
+}
+#start-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+#startscreen{
+  z-index: 1;
+  position: fixed; /* Make the div position fixed */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Set width to 100% of the viewport width */
+    height: 100vh; /* Set height to 100% of the viewport height */
+}
+#videostart video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#videostart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.text-animation {
+  animation: blink-1 2s infinite both;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Adjust the shadow size and color for desired glow effect */
+
+}
+
+@keyframes fade {
+  0% { opacity: 1; }
+  66.66% { opacity: 1; }
+  83.33% { opacity: 0; }
+  100% { opacity: 0; }
+}
+#flick{
+  font-weight: bold;
+  color: white;
+}
+@keyframes blink-1 {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+.col{
+  display: flex;
+  flex-direction: column;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  margin-left: 25%;
+}
+#smettbo{
+  justify-content: right;
+  height: 500px;
+  width: 500px;
+  margin-top: 15%;
+  margin-left: 1%;
+  z-index: 1;
+}
+#title #version{
+  z-index: 2;
+}
+#version{
+  margin-left: 33%;
+}
+#flick{
+  margin-left: 45%;
+  margin-top: 30%;
+  font-size: xx-large;
+}
+.triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-left: 50px solid #ffffff;
+	border-bottom: 25px solid transparent;
+    margin-left: 48.5%;
+    cursor: pointer;
+}
+#resumeBox {
+  z-index: 20;
+  display: none;
+  width: 80%;
+  height: 80%;
+  max-width: 400px;
+  max-height: 450px;
+  background-color: black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  text-align: center;
+  flex-direction: column;
+  border-radius: 40px;
+}
+
+@media (max-width: 800px) {
+  #resumeBox {
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+  }
+}
+#escape-Box{
+  height: 100%;
+}
+.escape-btns {
+  width: 70%;
+  height: 10%;
+  font-size: larger;
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+  margin: 2% auto;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.3s, box-shadow 0.3s;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+#resumeButton {
+  margin-top: 20%;
+}
+
+#resumeButton:hover,
+#leaderboardButton:hover,
+#achievementButton:hover,
+#optionButton:hover,
+#escapeButton:hover,
+#gameStartButton:hover,
+#creditsButton:hover,
+#quitButton:hover,
+#continue:hover,
+#leaderboard:hover,
+#quit:hover {
+  transform: scale(1.1);
+  border-color: #00ffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.btns{
+  display: flex;
+  width: 28%;
+  margin-top: 1%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  text-align: center;
+  flex-direction: column;
+}
+.start-btns {
+  width: 70%;
+  height: 3rem;
+  font-size: larger;
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+  margin: 2% auto;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.3s, box-shadow 0.3s;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+.back-btns{
+  width: 15%;
+  height: 3rem;
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+  margin: 2% auto;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.3s, box-shadow 0.3s;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+#backarrow{
+  width: 50px;
+  height: 40px;
+  margin-top: 2%;
+  cursor: pointer;
+}
+#menucontent{
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-left: 35%;
+  margin-right: 35%;
+  text-align: center;
+  border-radius: 20px;
+}
+#menucontent2{
+  display: none;
+  text-align: center;
+}
+#gameStart{
+  display: none;
+}
+.openingTitle{
+  text-align: center;
+  font-size: 3.5em;
+}
+#flyingItem {
+  position: absolute;
+  right: 0;
+  height: 30%;
+  animation: flyToLeft 3s linear ;
+  opacity: 0;
+}
+
+@keyframes flyToLeft {
+  0% {
+      right: 0;
+      opacity: 1;
+  }
+  99% {
+      opacity: 1;
+  }
+  100% {
+      right: 100%;
+      opacity: 0;
+  }
+}
+#goingitem {
+  position: absolute;
+  right: 100%;
+  height: 10%;
+  bottom: 0%;
+  transform: scaleX(-1);
+  animation: walkToLeft 30s linear;
+  opacity: 0;
+}
+@keyframes walkToLeft {
+  0% {
+      right: 100%;
+      opacity: 1;
+  }
+  94% {
+      opacity: 1;
+  }
+  95% {
+      right: 3%;
+      opacity: 0;
+  }
+}
+.musicrange {
+  width: 60%;
+  height: 2%;
+  background-color: #f0f0f0;
+}
+
+#setarrows, #setwasd{
+  width: 14%;
+  height: auto;
+  cursor: pointer;
+  margin-top: 2%;
+  font-size: larger;
+}
+#setarrows:hover, #setwasd:hover{
+  transform: scale(1.1);
+}
+#setarrows{
+  margin-right: 3%;
+}
+#warning{
+  color: white;
+}
+.context {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: rgb(68, 68, 68);
+  border: 3px solid rgb(68, 221, 183);
+}
+
+.achievement-image {
+  width: 30%;
+  height: 30%;
+  filter: grayscale(100%);
+}
+
+.achievement {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 20px;
+}
+.game-title {
+  font-size: 20px;
+  color: #717171;
+}
+
+.game-title span {
+  color: #3F3F3F;
+}
+.animate {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 100%;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: x-large;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  animation: 10s credits linear;
+}
+
+.credits {
+  margin-bottom: 50px;
+  font-size: 50px;
+}
+@keyframes credits {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -75%;
+  }
+}
+body{
+  overflow: hidden;
+}
+.none{
+  display: none;
+}
+#enemypokemon, #mypokemon{
+  width: 10%;
+}
+#enemypokemon img, #mypokemon img{
+  width: 200px;
+  height: 200px;
+}
+.dice{
+  margin-top: 5%;
+  width: 50px;
+  height: 50px;
+}
+.dicerow{
+  display: flex;
+  flex-direction: row;
+}
+#winnerbox{
+  display: none;
+}
+#winner{
+  margin: 0 auto;
+}
+.battle-btn{
+  background-color: black;
+  color: white;
+  width: 20%;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+.battle-btn:hover{
+  border-color: #ff0000;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+#eggrow{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+#egg{
+display: none;
+}
+#thechosenone{
+  width: 3%;
+}
+#anakin{
+  cursor: pointer;
+}
+.item img{
+  margin-top: 2%;
+  width: 24px;
+  height: 24px;
+}
+#down{
+  margin-top: 3%;
+}
+#easteregg img{
+  width: 20px;
+  height: 20px;
+}
+.item-btns{
+  width: 20%;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  margin-left: 2%;
+}
+#result{
+width: 100%;
+margin-left: 10%;
+font-size: x-large;
+  margin-top: -2%;
+  margin-bottom: 1%;
+}
+#singleleaderboard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.ranked{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
